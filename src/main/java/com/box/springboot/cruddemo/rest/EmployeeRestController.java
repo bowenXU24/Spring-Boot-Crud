@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.box.springboot.cruddemo.dao.EmployeeDAO;
 import com.box.springboot.cruddemo.entity.Employee;
+import com.box.springboot.cruddemo.service.EmployeeService;
 
 
 @RestController
@@ -16,20 +17,18 @@ import com.box.springboot.cruddemo.entity.Employee;
 public class EmployeeRestController {
 
 	
-		//inject employee DAO
-		
-		private EmployeeDAO employeeDAO;
+		private EmployeeService employeeService;
 		
 		@Autowired
-		public EmployeeRestController(EmployeeDAO employeeDAO) {
-			 this.employeeDAO =  employeeDAO;
+		public EmployeeRestController(EmployeeService employeeService) {
+			this.employeeService = employeeService;
 		}
 		
 		//expose "/employee" and return list
 		
 		@GetMapping("/employees")
 		public List<Employee> findAll(){
-			return  employeeDAO.findAll();
+			return  employeeService.findAll();
 		}
 	
 
