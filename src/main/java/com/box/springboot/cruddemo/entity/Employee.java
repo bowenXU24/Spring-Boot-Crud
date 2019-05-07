@@ -24,7 +24,7 @@ public class Employee {
 	private String lastName;
 
 	@Column(name = "email")
-	private String emial;
+	private String email;
 
 	//constructor
 
@@ -35,7 +35,7 @@ public class Employee {
 	public Employee(String firstName, String lastName, String email) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.emial = email;
+		this.email = email;
 	}
 	
 	
@@ -64,17 +64,17 @@ public class Employee {
 		this.lastName = lastName;
 	}
 
-	public String getEmial() {
-		return emial;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setEmial(String emial) {
-		this.emial = emial;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", emial=" + emial + "]";
+		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", emial=" + email + "]";
 	}
 
 	
